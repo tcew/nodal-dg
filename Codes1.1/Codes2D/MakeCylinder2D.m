@@ -52,9 +52,14 @@ for n=1:NCurveFaces  % deform specified faces
   % move vertices at end points of this face to the cylinder
   theta1 = atan2(y1-yo, x1-xo); theta2 = atan2(y2-yo, x2-xo);
 
-  % check to make sure they are in the same quadrant
-  if ((theta2 > 0) & (theta1 < 0)), theta1 = theta1 + 2*pi; end;
-  if ((theta1 > 0) & (theta2 < 0)), theta2 = theta2 + 2*pi; end;
+  % choose the smallest angle between the points
+  while abs(theta1 - theta2) > pi
+    if (theta1 > theta2)
+      theta1 = theta1 - 2*pi;
+    else
+      theta2 = theta2 - 2*pi;
+    end
+  end
   
   % distribute N+1 nodes by arc-length along edge
   theta = 0.5*theta1*(1-fr) + 0.5*theta2*(1+fr);
