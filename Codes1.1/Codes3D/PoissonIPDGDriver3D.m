@@ -3,9 +3,9 @@ Globals3D;
 
 % Generate Mesh
 figure(1);
-h = .33;
-[Nv, VX, VY, VZ, K, EToV] = MeshGenDistMesh3D(h);
-% [Nv, VX, VY, VZ, K, EToV] = MeshReaderGambit3D('cubeK86.neu');
+%h = .33;
+% [Nv, VX, VY, VZ, K, EToV] = MeshGenDistMesh3D(h);
+[Nv, VX, VY, VZ, K, EToV] = MeshReaderGambit3D('cubeK86.neu');
 
 % polynomial order to use in each element
 N = 4;
