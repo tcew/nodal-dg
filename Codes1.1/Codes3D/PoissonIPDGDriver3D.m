@@ -3,9 +3,9 @@ Globals3D;
 
 % Generate Mesh
 figure(1);
-%h = .33;
-% [Nv, VX, VY, VZ, K, EToV] = MeshGenDistMesh3D(h);
-[Nv, VX, VY, VZ, K, EToV] = MeshReaderGambit3D('cubeK86.neu');
+h = .33;
+[Nv, VX, VY, VZ, K, EToV] = MeshGenDistMesh3D(h);
+% [Nv, VX, VY, VZ, K, EToV] = MeshReaderGambit3D('cubeK86.neu');
 
 % polynomial order to use in each element
 N = 4;
@@ -19,7 +19,7 @@ StartUp3D;
 % perform symmetric reverse Cuthill McKee on stiffness matrix
 P = symrcm(A); 
 A = A(P,P);
-C = cholinc(A, 1e-4);
+C =ichol(A)
 
 % set up boundary condition 
 xbc = Fx(mapB); ybc = Fy(mapB); zbc = Fz(mapB);
