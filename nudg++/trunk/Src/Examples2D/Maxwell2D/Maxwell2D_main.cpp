@@ -22,7 +22,7 @@ int main(int argc, char* argv[])
   umLOG(1, "   o  version 3.0.0             \n");
   umLOG(1, "   o  June 6, 2007              \n");
   umLOG(1, "   o  Dr Tim Warburton          \n");
-  umLOG(1, "   o  tim.warburton@gmail.com   \n");
+  umLOG(1, "   o    \n");
   umLOG(1, "--------------------------------\n\n");
 
   NDG2D *p = new Maxwell2D; // 2D Maxwell simulator
