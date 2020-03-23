@@ -1,6 +1,6 @@
-function Q = ChannelIC2D(x, y, time);
+function [rho,rhou,rhov,Ener] = CylIC2D(x, y, time);
   
-%  function [Q] = ChannelIC2D(x, y, time)
+%  function [rho,rhou,rhov,Ener] = CylIC2D(x, y, time)
 %  Purpose: Impose uniform plane flow 
 
 % Example is Mach ** 0.4 ** flow in wind tunnel
@@ -12,8 +12,8 @@ Ein = pin/(gamma-1.0) + 0.5*rhoin*(uin^2+vin^2);
 
 % pack modified conserved variables
 
-Q(:,:,1) = rhoin*ones(size(x)); 
-Q(:,:,2)= rhoin*(1/.41)^2*6*(y+.2).*(0.41 - (y+.2));
-Q(:,:,3) = 0;
-Q(:,:,4) = Ein + 0.5*(Q(:,:,2).^2 + Q(:,:,3).^2)./Q(:,:,1);
+rho  = rhoin*ones(size(x));
+rhou = rhoin*(1/.41)^2*6*(y+.2).*(0.41 - (y+.2));
+rhov = 0;
+Ener = Ein + 0.5*(rhou.^2 + rhov.^2)./rho;
 return
