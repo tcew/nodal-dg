@@ -16,8 +16,8 @@ void  umLOG(const std::string& msg, int n=0);
 void  umMSG(const std::string& msg, int n=0);
 void  umTRC(const std::string& msg, int n=0);
 
-void  umWARNING(char* function_name, ...);
-void  umERROR(char* function_name, ...);
+void  umWARNING(const char* function_name, ...);
+void  umERROR(const char* function_name, ...);
 void  umQUIT();
 
 char* umOFORM(const char* fmt, ...);

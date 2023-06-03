@@ -625,7 +625,7 @@ DVec& CS_PCG::solve(const DVec& rhs, double tol, int maxit)
 
     rho1=rho;  rho=inner(r,z);
 
-    if ((0.0==rho) || isinf(rho)) {
+    if ((0.0==rho) || std::isinf(rho)) {
       m_flag = 4; break;
     }
 
@@ -633,7 +633,7 @@ DVec& CS_PCG::solve(const DVec& rhs, double tol, int maxit)
       p = z;
     } else {
       beta = rho / rho1;
-      if ((0.0 == beta) || isinf(beta)) {
+      if ((0.0 == beta) || std::isinf(beta)) {
         m_flag = 4; break;
       }
     //p = z + beta * p;
@@ -643,13 +643,13 @@ DVec& CS_PCG::solve(const DVec& rhs, double tol, int maxit)
     q = A*p;
     pq = inner(p,q);
 
-    if ((pq <= 0) || isinf(pq)) {
+    if ((pq <= 0) || std::isinf(pq)) {
       m_flag = 4; break;
     } else {
       alpha = rho / pq;
     }
 
-    if (isinf(alpha)) {
+    if (std::isinf(alpha)) {
       m_flag = 4; break;
     }
 
