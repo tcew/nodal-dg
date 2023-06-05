@@ -32,7 +32,7 @@ void NDG3D::Sample3D
 
 #if (0)
   // find containing tet
-  [sampletet,tetbary] = tsearchn([VX', VY', VZ'], EToV, [xout,yout,zout]);
+  [sampletet,tetbary] = tsearchn([VX.transpose(), VY.transpose(), VZ.transpose()], EToV, [xout,yout,zout]);
 #else
   //#######################################################
   DVec tetbary(4);

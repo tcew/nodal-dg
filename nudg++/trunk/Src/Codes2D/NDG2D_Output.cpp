@@ -77,7 +77,7 @@ void NDG2D::OutputVTK(const DMat& FData, int order, int zfield)
   //-------------------------------------
   // 1. Write the VTK header details
   //-------------------------------------
-  fprintf(fp, "# vtk DataFile Version 2");
+  fprintf(fp, "# vtk DataFile Version 2.0");
   fprintf(fp, "\nNuDG++ 2D simulation");
   fprintf(fp, "\nASCII");
   fprintf(fp, "\nDATASET UNSTRUCTURED_GRID\n");
@@ -236,7 +236,7 @@ void NDG2D::Output_DG_tris()
   //-------------------------------------
   // 1. Write the VTK header details
   //-------------------------------------
-  fprintf(fp, "# vtk DataFile Version 2");
+  fprintf(fp, "# vtk DataFile Version 2.0");
   fprintf(fp, "\nNuDG++ mesh");
   fprintf(fp, "\nASCII");
   fprintf(fp, "\nDATASET UNSTRUCTURED_GRID\n");
@@ -356,7 +356,7 @@ void NDG2D::Output_Mesh()
   //-------------------------------------
   // 1. Write the VTK header details
   //-------------------------------------
-  fprintf(fp, "# vtk DataFile Version 2");
+  fprintf(fp, "# vtk DataFile Version 2.0");
   fprintf(fp, "\nNuDG++ mesh");
   fprintf(fp, "\nASCII");
   fprintf(fp, "\nDATASET UNSTRUCTURED_GRID\n");
@@ -576,7 +576,7 @@ void NDG2D::OutputNodes(bool bFaceNodes)
   //-------------------------------------
   // 1. Write the VTK header details
   //-------------------------------------
-  fprintf(fp, "# vtk DataFile Version 2");
+  fprintf(fp, "# vtk DataFile Version 2.0");
   fprintf(fp, "\nNDGFem simulation nodes");
   fprintf(fp, "\nASCII");
   fprintf(fp, "\nDATASET UNSTRUCTURED_GRID\n");
@@ -687,7 +687,7 @@ void NDG2D::OutputNodes_cub()
   //-------------------------------------
   // 1. Write the VTK header details
   //-------------------------------------
-  fprintf(fp, "# vtk DataFile Version 2");
+  fprintf(fp, "# vtk DataFile Version 2.0");
   fprintf(fp, "\nNDGFem simulation nodes (high-order cubature)");
   fprintf(fp, "\nASCII");
   fprintf(fp, "\nDATASET UNSTRUCTURED_GRID\n");
@@ -792,7 +792,7 @@ void NDG2D::OutputNodes_gauss()
   //-------------------------------------
   // 1. Write the VTK header details
   //-------------------------------------
-  fprintf(fp, "# vtk DataFile Version 2");
+  fprintf(fp, "# vtk DataFile Version 2.0");
   fprintf(fp, "\nNDGFem simulation nodes (surface quadrature)");
   fprintf(fp, "\nASCII");
   fprintf(fp, "\nDATASET UNSTRUCTURED_GRID\n");

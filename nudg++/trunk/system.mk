@@ -14,7 +14,7 @@ FC = gfortran
 LD = g++
 
 # optimization flags passed to all compilers
-OPTFLAGS = -O3 -DNDEBUG
+OPTFLAGS = -O3 -DNDEBUG -Wno-free-nonheap-object
 # OPTFLAGS = -g -DDEBUG -D_DEBUG
 #OPTFLAGS = -Wall 
 

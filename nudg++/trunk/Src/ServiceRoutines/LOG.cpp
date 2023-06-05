@@ -175,7 +175,7 @@ void umTRC(const std::string& msg, int n)
 
 
 //---------------------------------------------------------
-void umWARNING (char* function_name, ...)
+void umWARNING (const char* function_name, ...)
 //---------------------------------------------------------
 {
   // only g_nMax_Warnings warnings are allowed:
@@ -206,7 +206,7 @@ void umWARNING (char* function_name, ...)
 
 
 //---------------------------------------------------------
-void umERROR (char* function_name, ...)
+void umERROR (const char* function_name, ...)
 //---------------------------------------------------------
 {
   static char buf[2048];

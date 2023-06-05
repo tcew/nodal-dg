@@ -355,7 +355,7 @@ void Output_DG_tris(const PInfoV& pinfo)
   //-------------------------------------
   // 1. Write the VTK header details
   //-------------------------------------
-  fprintf(fp, "# vtk DataFile Version 2");
+  fprintf(fp, "# vtk DataFile Version 2.0");
   fprintf(fp, "\nDG node connectivity");
   fprintf(fp, "\nASCII");
   fprintf(fp, "\nDATASET UNSTRUCTURED_GRID\n");
@@ -467,7 +467,7 @@ void Output_DG_sol(const PInfoV& pinfo, const DMat& Q)
   //-------------------------------------
   // 1. Write the VTK header details
   //-------------------------------------
-  fprintf(fp, "# vtk DataFile Version 2");
+  fprintf(fp, "# vtk DataFile Version 2.0");
   fprintf(fp, "\nDG node connectivity");
   fprintf(fp, "\nASCII");
   fprintf(fp, "\nDATASET UNSTRUCTURED_GRID\n");

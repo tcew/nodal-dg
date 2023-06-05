@@ -145,8 +145,8 @@ void MLIndex_sort<T>::reverse_slice(T *lo, T *hi)
 template <typename T>
 void MLIndex_sort<T>::binarysort(T *lo, T *hi, T *start)
 {
-  register T *l, *p, *r;
-  register T pivot;
+  T *l, *p, *r;
+  T pivot;
 
   if (lo == start)
     ++start;
