@@ -376,7 +376,6 @@ BLASOBJS = \
  BlasLapack/ztrsm.o \
  BlasLapack/ztrsv.o 
 
-
 .cpp.o:
 	$(CXX) $(CXXFLAGS) -o $*.o -c $*.cpp
 
@@ -386,6 +385,7 @@ BLASOBJS = \
 libBlasLapack: $(BLASOBJS)
 	$(AR) libBlasLapack.a $(BLASOBJS)
 	$(RANLIB) libBlasLapack.a
+	mkdir -p ./Lib
 	$(MV) libBlasLapack.a ./Lib
 
 libNDG: $(OBJS)
@@ -420,6 +420,7 @@ libEUL: $(EULOBJS)
 
 
 Maxwell2D: libNDG libMAX libBlasLapack
+	mkdir -p bin
 	$(LD) $(CXXFLAGS) -o bin/Maxwell2D Src/Examples2D/Maxwell2D/Maxwell2D_main.cpp -L./Lib -lMAX -lNDG $(BLASLAPACKLIBS) -lm 
 
 MaxwellCurved2D: libNDG libMAX libBlasLapack
@@ -437,6 +438,8 @@ CurvedINS2D: libNDG libINS libBlasLapack
 Euler2D: libEUL libNDG libBlasLapack
 	$(LD) $(CXXFLAGS) -o bin/Euler2D Src/Examples2D/CurvedEuler2D/CurvedEuler2D_main.cpp -L./Lib -lEUL -lNDG $(BLASLAPACKLIBS) -lm
 
+all:	Maxwell2D MaxwellCurved2D CurvedINS2D Euler2D
+
 clean:
 	rm -f $(OBJS) 
 	rm -f $(EULOBJS) 
@@ -449,7 +452,7 @@ clean:
 	rm -f $(T3DOBJS)
 
 realclean: clean
-	rm -rf *.o ./Lib/libNDG.a ./Lib/libMAX.a ./Lib/libINS.a ./Lib/libARBC.a ./Lib/libBlasLapack.a
+	rm -rf *.o ./Lib/libEUL.a ./Lib/libNDG.a ./Lib/libMAX.a ./Lib/libINS.a ./Lib/libBlasLapack.a
 	($(CD) BlasLapack; rm -rf *.o )
 	($(CD) Src/Arrays; rm -rf *.o )
 	($(CD) Src/Codes1D; rm -rf *.o )
