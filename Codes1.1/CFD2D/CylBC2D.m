@@ -26,7 +26,7 @@ Ener(gmapI) = Ein + 0.5*(rhou(gmapI).^2 + rhov(gmapI).^2)/rhoin;
 % Wall conditions -- reflective, isothermal, i.e., n.u=0, T=T(t=0)
 Temp  = pin/rhoin/(gamma-1);
 rhoW = rho(gmapW); rhouW = rhou(gmapW); rhovW = rhov(gmapW); EnerW = Ener(gmapW);
-nxW = gnx(gmapW); nyW = nyin(gmapW);
+nxW = gnx(gmapW); nyW = gny(gmapW);
 
 rhou(gmapW) = -rhou(gmapW); rhov(gmapW) = -rhov(gmapW);
 Ener(gmapW) = rhoW*Temp + 0.5*(rhou(gmapW).^2 + rhov(gmapW).^2)./rhoW;
@@ -34,7 +34,7 @@ Ener(gmapW) = rhoW*Temp + 0.5*(rhou(gmapW).^2 + rhov(gmapW).^2)./rhoW;
 % cylinder conditions -- reflective, isothermal, i.e., n.u=0, T=T(t=0)
 Temp  = pin/rhoin/(gamma-1);
 rhoC = rho(gmapC); rhouC = rhou(gmapC); rhovC = rhov(gmapC); EnerC = Ener(gmapC);
-nxC = gnx(gmapC); nyC = nyin(gmapC);
+nxC = gnx(gmapC); nyC = gny(gmapC);
 
 rhou(gmapC) = -rhou(gmapC); rhov(gmapC) = -rhov(gmapC);
 Ener(gmapC) = rhoC*Temp + 0.5*(rhou(gmapC).^2 + rhov(gmapC).^2)./rhoC;
