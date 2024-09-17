@@ -19,7 +19,7 @@ StartUp3D;
 % perform symmetric reverse Cuthill McKee on stiffness matrix
 P = symrcm(A); 
 A = A(P,P);
-C = cholinc(A, 1e-4);
+C =ichol(A)
 
 % set up boundary condition 
 xbc = Fx(mapB); ybc = Fy(mapB); zbc = Fz(mapB);
